@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.amp.acmedates"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "AcmeDates",
+    "packageName": "com.amp.acmedates",
+    "packageFolder": "com/amp/acmedates",
+    "serverPort": "8084",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OGRiMzZlODEyNTYxN2MzZGZkZWMyNDA2OTcwOGUxMzk0YjUwMjQzN2E5NTk2ZTkwYzQ3ZmQ0Njc4N2I2NzQ5N2YyODA3ZDdiNjI5ODc5N2YwOGY5NGI4ZjdhZmQyZDBhM2I4NTYwYjYxZjVjYmE4ODMzNTZiN2RhNDU1ZmM2ZGQ=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1579980252803,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

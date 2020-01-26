@@ -1,0 +1,11 @@
+version: '2'
+services:
+  acmedates-postgresql:
+    image: postgres:11.6
+    # volumes:
+    #     - ~/volumes/jhipster/AcmeDates/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=AcmeDates
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
