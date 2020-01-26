@@ -38,15 +38,18 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/AcmeDates
-    username: AcmeDates
+    username: root
     password: d8StezT
     hikari:
       poolName: Hikari
       auto-commit: false
+    driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: io.github.jhipster.domain.util.FixedPostgreSQL95Dialect
     database: POSTGRESQL
     show-sql: true
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate.id.new_generator_mappings: true
       hibernate.connection.provider_disables_autocommit: true
@@ -57,9 +60,10 @@ spring:
       hibernate.cache.hazelcast.instance_name: AcmeDates
       hibernate.cache.use_minimal_puts: true
       hibernate.cache.hazelcast.use_lite_member: true
+    generate-ddl: true
   liquibase:
-    # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
+    enabled: true
+  # Remove 'faker' if you do not want the sample data to be loaded automatically
   mail:
     host: localhost
     port: 25

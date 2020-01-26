@@ -71,4 +71,20 @@
             <column name="local_date" type="date"/>
         </createTable>
     </changeSet>
+    <changeSet id="00000000000003" author="adrian (generated)">
+        <createTable tableName="date_product">
+            <column  name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="id"/>
+            </column>
+            <column name="name"  type="varchar(255)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="delivery_date"  type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="declared_value" type="double">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

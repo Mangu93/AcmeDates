@@ -5,8 +5,9 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=AcmeDates
+      - POSTGRES_USER=root
       - POSTGRES_PASSWORD=d8StezT
+      - POSTGRES_DB=AcmeDates
     ports:
       - 5432:5432
 
