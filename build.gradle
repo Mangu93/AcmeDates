@@ -91,15 +91,15 @@ springBoot {
 
 test {
     useJUnitPlatform()
-    exclude "**/*IT*", "**/*IntTest*"
-
-    testLogging {
-        events 'FAILED', 'SKIPPED'
-    }
-    // uncomment if the tests reports are not generated
-    // see https://github.com/jhipster/generator-jhipster/pull/2771 and https://github.com/jhipster/generator-jhipster/pull/4484
-    // ignoreFailures true
-    reports.html.enabled = false
+//    exclude "**/*IT*", "**/*IntTest*"
+//
+//    testLogging {
+//        events 'FAILED', 'SKIPPED'
+//    }
+//    // uncomment if the tests reports are not generated
+//    // see https://github.com/jhipster/generator-jhipster/pull/2771 and https://github.com/jhipster/generator-jhipster/pull/4484
+//    // ignoreFailures true
+//    reports.html.enabled = false
 }
 
 task integrationTest(type: Test) {
@@ -139,7 +139,7 @@ liquibase {
         main {
             driver "org.postgresql.Driver"
             url "jdbc:postgresql://localhost:5432/AcmeDates"
-            username "AcmeDates"
+            username "root"
             password "d8StezT"
             changeLogFile "src/main/resources/config/liquibase/master.xml"
             defaultSchemaName ""
@@ -150,7 +150,7 @@ liquibase {
         diffLog {
             driver "org.postgresql.Driver"
             url "jdbc:postgresql://localhost:5432/AcmeDates"
-            username "AcmeDates"
+            username "root"
             password "d8StezT"
             changeLogFile project.ext.diffChangelogFile
             referenceUrl "hibernate:spring:com.amp.acmedates.domain?dialect=io.github.jhipster.domain.util.FixedPostgreSQL95Dialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
@@ -263,6 +263,9 @@ dependencies {
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstruct_version}"
     annotationProcessor "org.hibernate:hibernate-jpamodelgen:${hibernate_version}"
     annotationProcessor "org.glassfish.jaxb:jaxb-runtime:${jaxb_runtime_version}"
+    // https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
     annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: "com.vaadin.external.google", module: "android-json"
     }
