@@ -6,7 +6,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -37,7 +36,7 @@ public class DateProductUtils {
                 dateProduct.setName(key);
                 dateProduct.setDeliveryDate(zonedDateTime);
                 dateProductService.save(dateProduct);
-            } catch (DataIntegrityViolationException exception) {
+            } catch (Exception exception) {
                 log.info("Got error {}, continuing", exception.getLocalizedMessage());
             }
         }

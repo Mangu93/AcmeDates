@@ -13,8 +13,11 @@ public class DateProduct implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false, updatable = false)
+    @SequenceGenerator(name="date_product_iddate_product_seq",
+        sequenceName="date_product_iddate_product_seq", allocationSize=1)
+    private Long id;
 
     @NotNull
     @Column(name = "name", unique = true)
@@ -27,11 +30,11 @@ public class DateProduct implements Serializable {
     @Column(name = "declared_value", nullable = false)
     private Double declaredValue;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -64,7 +67,7 @@ public class DateProduct implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DateProduct that = (DateProduct) o;
-        return id == that.id &&
+        return id.equals(that.id) &&
             name.equals(that.name) &&
             deliveryDate.equals(that.deliveryDate) &&
             declaredValue.equals(that.declaredValue);
